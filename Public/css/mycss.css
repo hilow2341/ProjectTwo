@@ -1,0 +1,27 @@
+#head{
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 10%;
+    box-sizing: border-box; }
+
+    .row{
+        color: gray;
+        padding-left:21%;
+    }
+    #input{
+        width: 67%;
+    }
+    .first-row{
+        size: 5;
+     background-color: hotpink;  color: hotpink;
+    }
+
+    .t-r1, .t-r2{
+        border-style: dotted;
+        width: auto;
+        height: 300px;
+ background-color: beige; color: aqua;
+  
+}

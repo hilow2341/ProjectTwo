@@ -11,17 +11,97 @@
         padding-left:21%;
     }
     #input{
-        width: 67%;
+        width: 100%;
     }
     .first-row{
         size: 5;
-     background-color: hotpink;  color: hotpink;
+  
     }
 
     .t-r1, .t-r2{
-        border-style: dotted;
+		border-style: solid;
+		border-width: 1px;
         width: auto;
         height: 300px;
- background-color: beige; color: aqua;
+ background-color: beige; color: black;
+ 
   
+}
+#sub{
+	padding-right: 5%;
+	
+}
+.box{
+	padding-left: 20px;
+	}
+	.title{
+		text-align: center;
+		height: 20%;
+		border-style: ridge;
+		border-color:rgb(61, 35, 85);
+		width: auto;
+	background-color: rgb(106, 86, 122);
+	}
+.gamepic{
+background-color: white;	
+height: 78%;
+}
+.row2{
+	height: 20px;
+}
+/* modal */
+
+.bg-modal {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 80%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.modal-contents {
+	height: 45%;
+	width: 85%;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+}
+
+input {
+	margin: 15px auto;
+	display: block;
+	width: 50%;
+	padding: 8px;
+	border: 1px solid gray;
+}
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+	
+	}
+	.modal-title{
+		height: 10%;
+		width: 80%;
+		font-size: 34px ;
+		
+		border-style: solid;
+		border-width: 1px;
+		background-color: rgb(61, 35, 85);
+		padding-left:  20%; ;
+	}
+#spacing{
+	padding-right:25% ;
+	text-align: center;
 }

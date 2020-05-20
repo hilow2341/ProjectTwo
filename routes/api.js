@@ -1,15 +1,19 @@
+//Refrence app.js
+//
+//^^^^^^^^^^
+
 $("#").on("click", function () {
 	$("#").empty()
 
-	var videoGames = [];
+	var requests = [];
 	$(".input").each(function () {
-		videoGames.push($(this).val());
+		requests.push($(this).val());
 	});
 
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://chicken-coop.p.rapidapi.com/games/%7Btitle%7D?platform=pc",
+		"url": "https://chicken-coop.fr/rest/games?title=[TITRE]",
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "chicken-coop.p.rapidapi.com",
@@ -20,6 +24,7 @@ $("#").on("click", function () {
 	$.ajax(settings).then(function (response) {
 		console.log(response);
 		response.forEach(response => {
+			var videoGame
 	
 		});
 	});

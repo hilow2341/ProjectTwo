@@ -52,6 +52,11 @@ height: 78%;
 .row2{
 	height: 20px;
 }
+/* transition */
+html {
+	scroll-behavior: smooth;
+  }
+
 /* modal */
 
 .bg-modal {

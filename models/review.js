@@ -14,9 +14,9 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-      category: {
+      console: {
         type: DataTypes.STRING,
-        defaultValue: "Personal"
+        defaultValue: "Choose Console"
       }
     });
     return Review;

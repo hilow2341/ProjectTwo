@@ -54,8 +54,9 @@ height: 78%;
 }
 /* transition */
 html {
-	scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
+
 
 /* modal */
 

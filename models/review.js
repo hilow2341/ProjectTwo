@@ -14,10 +14,8 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-      console: {
-        type: DataTypes.STRING,
-        defaultValue: "Choose Console"
-      }
+      createdAt: DataTypes.DATE,
+      updatedAt: DataTypes.DATE,
     });
     return Review;
   };

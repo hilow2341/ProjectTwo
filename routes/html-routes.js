@@ -11,13 +11,4 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
-
-
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
-
 };

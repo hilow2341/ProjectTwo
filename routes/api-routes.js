@@ -38,11 +38,11 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/reviews", function(req, res) {
-    console.log(req.body);
     db.Review.create({
       title: req.body.title,
       body: req.body.body,
-      category: req.body.category
+      createdAt: new Date(),
+      updatedAt: new Date()
     })
       .then(function(dbReview) {
         res.json(dbReview);

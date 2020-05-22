@@ -1,38 +1,47 @@
 $(document).ready(function(){
+  $(".change-sleep").on("click", function(event) {
+    var id = $(this).data("id");
+    var newSleep = $(this).data("newsleep");
 
-var bodyInput = $("#body");
-var titleInput = $("#title");
-var modalForm = $("#modalForm");
-
-var postConsoleSelect = $("#console");
-
-postConsoleSelect.val("Choose Console");
-
-$(modalForm).on("submit", function handleFormSubmit(event) {
-    event.preventDefault();
-   
-    if (!titleInput.val().trim() || !bodyInput.val().trim()) {
-      return;
-    }
-    // Constructing a newPost object to hand to the database
-    var newReview = {
-      title: titleInput.val().trim(),
-      body: bodyInput.val().trim(),
-      console: postConsoleSelect.val()
+    var newSleepState = {
+      sleepy: newSleep
     };
 
-    console.log(newReview);
+    // Send the PUT request.
+    $.ajax("/api/cats/" + id, {
+      type: "PUT",
+      data: newSleepState
+    }).then(
+      function() {
+        console.log("changed sleep to", newSleep);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+    $("#newPost").submit(function(event){
+    console.log('here');
+      event.preventDefault();
+        var newPost = {
+            title: $("#modalInput").val().trim(),
+            body: $("#modalInput").val().trim()
+        }
+        $.ajax("/api/reviews", {
+            type: "POST",
+            data: newPost
+        }).then(function(res){
+            console.log("create review", res);
+            // location.reload();
+            $('#review').text(res.body)
+        })
 
   });
- function submitReview(review) {
-    $.review("/api/posts/", Post, function() {
-      window.location.href = "/index";
-    });
-  }
+
   function updateReview(review) {
     $.ajax({
-      method: "PUT",
-      url: "/api/posts",
+      method: "GET",
+      url: "/api/reviews",
       data: post
     })
       .then(function() {

@@ -4,24 +4,26 @@ document.querySelector('.close').addEventListener("click", function() {
 	document.querySelector('.bg-modal').style.display = "none";
 });
 
-$(".box").on("click",function(){
+$(".box ").on("click",function(){
 document.querySelector('.bg-modal').style.display = "flex";	
-})
+});
+
 
 //This is our api
 $("#search").on("click", function (event) {
+	console.log(event);
 	event.stopPropagation();
-	//$("#").empty();
+	event.preventDefault();
 
-	var requests = [];
-	$(".input").each(function () {
-		requests.push($(this).val());
-	});
+	document.querySelector('.bg-modal').style.display = "flex";		
+
+	var title = $("#searchTitle").val();
+
 
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://chicken-coop.fr/rest/games?title=[TITRE]",
+		"url": "https://cors-anywhere.herokuapp.com/https://chicken-coop.fr/rest/games?title=" + title,
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "chicken-coop.p.rapidapi.com",
@@ -31,8 +33,27 @@ $("#search").on("click", function (event) {
 	
 	$.ajax(settings).then(function (response) {
 		console.log(response);
+		for (let i=0; i < response.result.length; i++) {
+			let game = response.result[i];
+			settings.url = "https://cors-anywhere.herokuapp.com/https://chicken-coop.fr/rest/games/" + game.title + "?platform=" + game.platform + "&amp;selectors[]=title&amp;selectors[]=genre&amp;selectors[]=score&amp;selectors[]=alsoAvailableOn&amp;selectors[]=image&amp;selectors[]=description"
+			$.ajax(settings).then(function (gameResponse) {
+
+			});
+			break;
+		}
 		response.forEach(response => {
-			var videoGame
+			var gameDiv = $("<h4>").addclass("button is-link is-light")
+			var gameP = $("<p>")
+
+			//Display title of videogame
+			gameDiv.text(response.result.title)
+			$("#").append(gameDiv)
+			//Display game platform
+			gameP.text(response.result.platform)
+			
+
+
+		
 	
 		});
 	});

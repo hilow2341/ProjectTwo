@@ -22,11 +22,8 @@
       }
     },
     "production": {
-      "username": "t4ho4z5lxeqb2epu",
-      "password": "sixzevzf3t3o19jz",
-      "database": "rxxsr6gip6l5kxxh",
-      "host": "pqxt96p7ysz6rn1f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "port": 3306,
+      "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql",
       "define": {
         "timestamps": false

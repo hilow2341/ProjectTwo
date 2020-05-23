@@ -131,8 +131,9 @@ border-radius: 5px;
 	border-radius: 5px;
 }
 #modalInput{
+	
 	width: 100%;
-	margin-top: 1%;
+	margin-top: 5%;
 	
 
 }
@@ -156,6 +157,9 @@ padding-right: 25%;
 	width: 100%;
 	margin-top: 1%;
 	background-color:lavender;
-	height: 20%;
+	height: 24%;
 	border-radius: 5px;
+}
+#sub{
+	margin-bottom: 40%;
 }

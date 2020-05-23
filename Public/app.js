@@ -49,8 +49,9 @@ $("#search").on("click", function (event) {
 		// 	console.log("test", response.result[i])
 			//let title = response.result.title;
 			$("#spacing").text(response.result.title);
-			console.log(response.result.image);
+			//console.log(response.result.image);
 			//console.log(response.result.score);
+			$("#date").text(response.result.releaseDate);
 			$("#score").text(response.result.score);
 			$("#gameImage").attr("src", response.result.image);
 		

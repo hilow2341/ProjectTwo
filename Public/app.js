@@ -54,6 +54,7 @@ $("#search").on("click", function (event) {
 			$("#date").text(response.result.releaseDate);
 			$("#score").text(response.result.score);
 			$("#gameImage").attr("src", response.result.image);
+			$("#description").text(response.result.description);
 		
 			// settings.url = "https://cors-anywhere.herokuapp.com/https://chicken-coop.fr/rest/games/" + game + "?&amp;selectors[]=title&amp;selectors[]=genre&amp;selectors[]=score&amp;selectors[]=alsoAvailableOn&amp;selectors[]=image&amp;selectors[]=description"
 			// $.ajax(settings).then(function (gameResponse) {
